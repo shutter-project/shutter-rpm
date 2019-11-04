@@ -5,7 +5,7 @@ env:
   global:
     - DOCKER_IMAGE=alectolytic/rpmbuilder
     - COPR_REPOSITORY=shutter
-    - OS_ARCH=x86_64
+    - OS_ARCH=noarch
   matrix:
     - OS_TYPE=fedora OS_DIST=fedora OS_VERSION=29
     - OS_TYPE=fedora OS_DIST=fedora OS_VERSION=30
