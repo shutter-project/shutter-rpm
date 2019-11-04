@@ -21,5 +21,5 @@ script:
 
 after_success:
   - pip install copr-cli simplejson
-#  - openssl aes-256-cbc -K $encrypted_key -iv $encrypted_iv -in .copr.enc -out .copr -d
-#  - if [ ! -z "${TRAVIS_TAG}" ]; then copr-cli --config .copr build -r ${OS_DIST}-${OS_VERSION}-${OS_ARCH} ${COPR_REPOSITORY} *.src.rpm; fi
+  - openssl aes-256-cbc -K $encrypted_334267c9f3a5_key -iv $encrypted_334267c9f3a5_iv -in .copr.config.enc -out .copr.config -d
+  - if [ ! -z "${TRAVIS_TAG}" ]; then copr-cli --config .copr.config build -r ${OS_DIST}-${OS_VERSION}-${OS_ARCH} ${COPR_REPOSITORY} *.src.rpm; fi
