@@ -42,7 +42,6 @@ with a comfortable GUI using the GTK+ 2.x framework.
 
 %prep
 %setup -q -n %{name}-%{version}
-%patch0 -p 2
 rm -vr share/doc/
 # Remove the bundled perl(X11::Protocol::Ext::XFIXES)
 rm -vr share/%{name}/resources/modules/X11
