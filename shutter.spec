@@ -1,12 +1,10 @@
 Name:       shutter
-Version:    0.93.1
-Release:    14%{?dist}
+Version:    0.94.3
+Release:    1%{?dist}
 Summary:    GTK+2-based screenshot application written in Perl
 License:    GPLv3+
 URL:        http://shutter-project.org
 Source0:    https://launchpad.net/shutter/0.9x/%{version}/+download/%{name}-%{version}.tar.gz
-# https://bugs.launchpad.net/shutter/+bug/1469840
-Patch0:     shutter-0.93.1-fix-semd-email.patch
 BuildArch:  noarch
 BuildRequires:  desktop-file-utils
 %if 0%{?fedora}
@@ -44,7 +42,6 @@ with a comfortable GUI using the GTK+ 2.x framework.
 
 %prep
 %setup -q -n %{name}-%{version}
-%patch0 -p 2
 rm -vr share/doc/
 # Remove the bundled perl(X11::Protocol::Ext::XFIXES)
 rm -vr share/%{name}/resources/modules/X11
@@ -130,6 +127,9 @@ EOF
 %{_datadir}/icons/ubuntu-mono-*/*/apps/%{name}-panel.*
 
 %changelog
+* Mon Nov 04 2019 Mike Heffner <mikeh@fesnel.com> - 0.94.3-1
+- Update to 0.94.3
+
 * Fri Jul 26 2019 Fedora Release Engineering <releng@fedoraproject.org> - 0.93.1-14
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
